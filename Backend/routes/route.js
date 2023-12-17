@@ -11,8 +11,11 @@ const homePage = require('../controllers/homePage');
 const AppleProductAnanlyze = require('../controllers/analyzeProduct')
 const reviewApi = require('../controllers/reviewApi');
 const monthReviewStatus = require('../controllers/monthwiseReviewStatus')
+const reviewCompare = require('../controllers/compareReview');
+
 router.get('/home',homePage.homePage)
 router.get('/appleProductAnalyze',AppleProductAnanlyze.getAppleAnalyze)
 router.post('/reviewApi',reviewApi.getReviewApi)
 router.post('/monthReviewStatus',monthReviewStatus.getMonthwiseReviewStatus)
+router.post('/comparereview',reviewCompare.postCompareReview);
 module.exports = router;   
