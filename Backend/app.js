@@ -51,7 +51,9 @@ app.get('/',(req,res)=>{
 })
 
 app.use(routes)
-
+// process.on('uncaughtException',()=>{
+//     console.log("SOmething went wrong")
+// })
   
 mongoose.connect(process.env.MONGO_DB).then(()=>{
     console.log("DB Connected")
