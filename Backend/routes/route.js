@@ -10,8 +10,9 @@ app.use(bodyParser.json())
 const homePage = require('../controllers/homePage');
 const AppleProductAnanlyze = require('../controllers/analyzeProduct')
 const reviewApi = require('../controllers/reviewApi');
-
+const monthReviewStatus = require('../controllers/monthwiseReviewStatus')
 router.get('/home',homePage.homePage)
 router.get('/appleProductAnalyze',AppleProductAnanlyze.getAppleAnalyze)
-router.get('/reviewApi',reviewApi.getReviewApi)
+router.post('/reviewApi',reviewApi.getReviewApi)
+router.get('/monthReviewStatus',monthReviewStatus.getMonthwiseReviewStatus)
 module.exports = router;   
