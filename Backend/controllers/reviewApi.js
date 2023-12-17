@@ -36,6 +36,8 @@ function classifySentiment(comment) {
     }
 }
 
+let productName;
+
 // Example usage
 const comment1 = "I love this product! It's amazing.";
 const comment2 = "Terrible experience, never buying again.";
@@ -60,7 +62,8 @@ const params = {
    await axios.get(url, { params })
   .then((response) => {
     // The response.data will contain the parsed JSON data
-    // console.log('Response:', response.data.product_results.reviews);
+    console.log('Response:', response.data.product_results);
+    productName = response.data.product_results.title
     mainData = response.data.product_results.reviews;
     title  = mainData.title
     product_Id = mainData.id 
@@ -97,6 +100,7 @@ const params = {
 
   return res.json({
     status:"success",
+    productName,
     data:resData
 })
 })
