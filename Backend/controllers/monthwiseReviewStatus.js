@@ -17,7 +17,8 @@ app.use(bodyParser.json())
 exports.getMonthwiseReviewStatus = tryCatch(async (req,res,next)=>{
 
 
-    // console.log(req.body)
+    console.log(req.body)
+    let id = req.body.id;
 
 // Function to classify sentiment
 function classifySentiment(comment) {
@@ -53,7 +54,7 @@ const params = {
   amazon_domain: 'amazon.in',
   engine: 'amazon',
   api_key: 'HP9XsJX4zkXdEBcuZJ3gJfJNfWfDcJn7',
-  product_id: 'B0B4F52B5X',
+  product_id: id,
   gl: 'in',
     };
 

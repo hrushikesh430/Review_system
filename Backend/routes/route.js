@@ -14,5 +14,5 @@ const monthReviewStatus = require('../controllers/monthwiseReviewStatus')
 router.get('/home',homePage.homePage)
 router.get('/appleProductAnalyze',AppleProductAnanlyze.getAppleAnalyze)
 router.post('/reviewApi',reviewApi.getReviewApi)
-router.get('/monthReviewStatus',monthReviewStatus.getMonthwiseReviewStatus)
+router.post('/monthReviewStatus',monthReviewStatus.getMonthwiseReviewStatus)
 module.exports = router;   

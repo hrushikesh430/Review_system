@@ -17,7 +17,7 @@ app.use(bodyParser.json())
 exports.getReviewApi = tryCatch(async (req,res,next)=>{
 
 
-    console.log(req.body)
+    // console.log(req.body)
 
 // Function to classify sentiment
 function classifySentiment(comment) {
@@ -45,7 +45,7 @@ const comment3 = "Oh, great! Another fantastic delivery experience. Just what I 
 // console.log("Comment 2 sentiment:", classifySentiment(comment2));
 // console.log("Comment 3 sentiment:", classifySentiment(comment3)); 
 
-    const productId = req.body.productId
+    const productId = req.body.id
     let resData = []
     const url = 'https://ecom.webscrapingapi.com/v1';
 const params = {
@@ -53,7 +53,7 @@ const params = {
   amazon_domain: 'amazon.in',
   engine: 'amazon',
   api_key: 'HP9XsJX4zkXdEBcuZJ3gJfJNfWfDcJn7',
-  product_id: 'B09G9JJT7M',
+  product_id: productId,
   gl: 'in',
     };
 
